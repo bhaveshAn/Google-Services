@@ -1,0 +1,139 @@
+#: import FadeTransition kivy.uix.screenmanager.FadeTransition
+
+<MyGroupCheckBox@CheckBox>:
+	group:'service'
+<MyCheckbox@Checkbox>:
+
+ScreenManagement:
+	transition: FadeTransition()
+	GoogleScreen:
+	QueryScreen:
+	ServiceScreen:
+	GoogleSearch:
+	YouTubeSearch:
+	GMailSearch:
+	GImageSearch:
+	GMapsSearch:
+
+<DoodleImage@ButtonBehavior+Image>:
+
+<MyButton@Button>:
+	font_size:20
+	background_color:[0,0,0,1]
+<GoogleScreen>:
+	name:'Home'
+	MyButton:
+		on_release:app.root.current='Query'
+		markup:True
+		pos:0.5,0.4
+		align:'center'
+		text:'[b] Google Services[/b]'
+		font_size:50
+<QueryScreen>:
+	name:'Query'
+	BoxLayout:
+		orientation:'vertical'
+		BoxLayout:
+			orientation:'horizontal'
+			pos:0,500
+			Button:
+				background_color:[0,0,0,1]
+				font_size:10
+				on_release:app.root.current='Home'
+				text:'<--'
+				align:'left'
+			TextInput:
+				id:search_text
+				multiline:False
+				keyboard_suggestions:True
+				input_type:'text'
+				font_size:20
+				on_text_validate:root.goto(search_text.text)
+		BoxLayout:
+			orientation:'horizontal'
+			MyGroupCheckBox:
+				on_active:app.root.current='G_search'
+			MyButton:
+				id:g_search
+				text:"Google Search"
+			MyGroupCheckBox:
+				on_active:app.root.current='I_search'
+			MyButton:
+				text:'Google Images'
+			MyGroupCheckBox:
+				on_active:app.root.current='Y_search'
+			MyButton:
+				text:'YouTube'
+			MyGroupCheckBox:
+				on_active:app.root.current='M_search'
+			MyButton:
+				text:'Google Maps'
+			MyGroupCheckBox:
+				on_active:app.root.current='E_search'
+			MyButton:
+				text:'Gmail'
+<GoogleSearch@Screen>:
+	name:'G_search'
+	GridLayout:
+		cols:2
+		DoodleImage:
+			on_release:app.root.current='Query'
+			source:'assets/img/index.jpeg'
+			size:20,50
+
+	
+		TextInput:
+			multiline:False
+
+<YouTubeSearch@Screen>:
+	name:'Y_search'
+	GridLayout:
+		cols:2
+		DoodleImage:
+			on_release:app.root.current='Query'
+			source:'assets/img/you.jpeg'
+			size:20,50
+			allow_stretch:True
+
+	
+		TextInput:
+			multiline:False
+
+<GMailSearch@Screen>:
+	name:'E_search'
+	GridLayout:
+		cols:2
+		MyButton:
+			on_release:app.root.current='Query'
+			text:'Back'
+			size:20,50
+
+	
+		TextInput:
+			multiline:False
+
+<GMapsSearch@Screen>:
+	name:'M_search'
+	GridLayout:
+		cols:2
+		MyButton:
+			on_release:app.root.current='Query'
+			text:'Back'
+			size:20,50
+
+	
+		TextInput:
+			multiline:False
+
+<GImageSearch@Screen>:
+	name:'I_search'
+	GridLayout:
+		cols:2
+		MyButton:
+			on_release:app.root.current='Query'
+			text:'Back'
+			size:20,50
+
+	
+		TextInput:
+			multiline:False
