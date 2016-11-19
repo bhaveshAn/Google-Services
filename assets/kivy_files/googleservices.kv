@@ -25,7 +25,8 @@ ScreenManagement:
 	MyButton:
 		on_release:app.root.current='Query'
 		markup:True
-		pos:0.5,0.4
+		padding:200,200
+		size_hint:1,1
 		align:'center'
 		text:'[b] Google Services[/b]'
 		font_size:50
@@ -36,9 +37,11 @@ ScreenManagement:
 		BoxLayout:
 			orientation:'horizontal'
 			pos:0,500
+			padding:100,100
+			spacing:50
 			Button:
 				background_color:[0,0,0,1]
-				font_size:10
+				font_size:50
 				on_release:app.root.current='Home'
 				text:'<--'
 				align:'left'
@@ -51,6 +54,8 @@ ScreenManagement:
 				on_text_validate:root.goto(search_text.text)
 		BoxLayout:
 			orientation:'horizontal'
+			padding:50,50
+			spacing:20
 			MyGroupCheckBox:
 				on_active:app.root.current='G_search'
 			MyButton:

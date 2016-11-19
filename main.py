@@ -13,12 +13,10 @@ class ServiceScreen(Screen):
 	pass
 
 class QueryScreen(Screen):
-	@classmethod
-	def goto(self,text):
-    print('Hello %s has been inserted' %(text))
-
-    def search_query(self,value):
-		print('Its a %s query' %(value))
+        def goto(self,text):
+                print('Hello %s has been inserted'%(text))
+        def search_query(self,value):
+                print('Its a %s query'%(value))
 
 class ScreenManagement(ScreenManager):
 	pass
