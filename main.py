@@ -7,7 +7,7 @@ from kivy.uix.floatlayout import FloatLayout
 from kivy.uix.screenmanager import ScreenManager,Screen,FadeTransition
 
 
-class GoogleScreen(Screen):
+'''class GoogleScreen(Screen):
 	pass
 class ServiceScreen(Screen):
 	pass
@@ -16,7 +16,7 @@ class QueryScreen(Screen):
         def goto(self,text):
                 print('Hello %s has been inserted'%(text))
         def search_query(self,value):
-                print('Its a %s query'%(value))
+                print('Its a %s query'%(value))'''
 
 class ScreenManagement(ScreenManager):
 	pass
